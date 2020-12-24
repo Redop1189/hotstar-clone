@@ -1,3 +1,5 @@
-const AppHome = () => <h1>Hello</h1>;
+import PagePlaceHolder from '../components/spinners';
+
+const AppHome = () => <PagePlaceHolder />;
 
 export default AppHome;

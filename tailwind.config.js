@@ -14,10 +14,15 @@ module.exports = {
         inputBorder: 'rgba(255, 255, 255, 0.6)',
         accent: '#1f80e0',
       },
+      transitionProperty: {
+        width: 'width',
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      width: ['focus'],
+    },
   },
   plugins: [],
 };

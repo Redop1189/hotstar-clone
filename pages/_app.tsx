@@ -1,16 +1,17 @@
-import '../styles/index.css';
+import 'tailwindcss/tailwind.css';
+import '../styles/globals.css';
 
 import { AppProps } from 'next/app';
 
-import Header from '../components/header/Header';
-import MainLayout from '../layouts/MainLayout';
+import AppHeader from '../components/header';
+import { classFull } from '../utils';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
-    <Header />
-    <MainLayout>
+    <AppHeader />
+    <main className={`${classFull} pt-1 pb-8`}>
       <Component {...pageProps} />
-    </MainLayout>
+    </main>
   </>
 );
 

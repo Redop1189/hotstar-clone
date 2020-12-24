@@ -11,7 +11,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-bgPrimary text-textPrimary">
+        <body className="bg-bgFull text-textNormal">
           <Main />
           <NextScript />
         </body>
