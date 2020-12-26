@@ -3,6 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        '55%': '55%',
+        '45%': '45%',
+        heroCardGradientWidth: 'calc(55% - 16rem)',
+      },
       colors: {
         bgFull: '#0c111b',
         bg2: '#192133',
