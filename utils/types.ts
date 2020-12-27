@@ -5,3 +5,5 @@ export interface ITitleDetails {
   categories: string[];
   description: string;
 }
+
+export type TCardIndex = 'first' | 'middle' | 'last';
