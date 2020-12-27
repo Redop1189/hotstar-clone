@@ -10,7 +10,24 @@ body {
 }
 
 @media (min-width: 768px) {
-  .clampedLine {
+  .clampedLine2 {
     -webkit-line-clamp: 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .firstTransform:hover {
+    transform: scale(1.2, 1.2) translate(11%, 0);
+    z-index: 40;
+  }
+
+  .normalTransform:hover {
+    transform: scale(1.2, 1.2) translate(0, 0);
+    z-index: 40;
+  }
+
+  .lastTransform:hover {
+    transform: scale(1.2, 1.2) translate(-12%, 0);
+    z-index: 40;
   }
 }

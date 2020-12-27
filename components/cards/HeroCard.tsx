@@ -9,7 +9,7 @@ const HeroCard = ({ categories, description, imgSrc, title, year }: ITitleDetail
         &nbsp;&nbsp;&#8226;&nbsp;&nbsp;
         {year}
       </p>
-      <p className="clampedLine">{description}</p>
+      <p className="clampedLine clampedLine2">{description}</p>
     </div>
     <div className="hidden md:block w-64 h-full absolute right-heroCardGradientWidth top-0 bg-gradient-to-r from-bg3 to-transparent"></div>
     <img className="w-full md:w-55% object-cover rounded-md" src={imgSrc} alt={title} />

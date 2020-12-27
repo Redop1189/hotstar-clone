@@ -17,7 +17,7 @@ const AppHeader = () => {
   useEffect(() => setExpandMenu(false), [asPath]);
 
   return (
-    <header className={`${classFull} py-5 sticky top-0 z-10 bg-bgFull`}>
+    <header className={`${classFull} py-5 sticky top-0 z-50 bg-bgFull`}>
       <div className="sm:hidden w-full flex justify-between items-center relative">
         <AppHeading />
         <button aria-label="expand menu" className={iconButtonClass} onClick={toggleMenu}>
