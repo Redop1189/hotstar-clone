@@ -5,14 +5,14 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
 const VerticalCardCarousel = () => {
-  const { next, prev, sliderRef, slideCount } = useCarousel(false);
+  const { next, prev, sliderRef, slideCount, leftDisable, rightDisable } = useCarousel(false);
 
   const end = [slideCount - 1, 2 * slideCount - 1, 3 * slideCount - 1];
 
   return (
     <div ref={sliderRef} className="keen-slider relative mt-3 rounded-md">
       <p className="absolute z-30 cursor-pointer text-xl font-semibold hover:text-accent">Popular Movies</p>
-      <LeftArrow onPress={prev} />
+      <LeftArrow onPress={prev} shouldDisable={leftDisable} />
       {Array(21)
         .fill(0)
         .map((_, j) => (
@@ -25,7 +25,7 @@ const VerticalCardCarousel = () => {
           </div>
         ))}
 
-      <RightArrow onPress={next} />
+      <RightArrow onPress={next} shouldDisable={rightDisable} />
     </div>
   );
 };

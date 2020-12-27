@@ -5,11 +5,11 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
 const HeroCarousel = () => {
-  const { next, prev, sliderRef } = useCarousel(true);
+  const { next, prev, sliderRef, leftDisable, rightDisable } = useCarousel(true);
 
   return (
     <div ref={sliderRef} className="keen-slider relative">
-      <LeftArrow onPress={prev} />
+      <LeftArrow onPress={prev} shouldDisable={leftDisable} />
       {Array(6)
         .fill(0)
         .map((_, j) => (
@@ -17,7 +17,7 @@ const HeroCarousel = () => {
             <HeroCard {...demoTitle} />
           </div>
         ))}
-      <RightArrow onPress={next} />
+      <RightArrow onPress={next} shouldDisable={rightDisable} />
     </div>
   );
 };

@@ -6,10 +6,9 @@ const useCarousel = (isHero: boolean) => {
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     duration: isHero ? 1200 : 2500,
-    spacing: isHero ? 30 : 8,
+    spacing: isHero ? 12 : 0,
     slidesPerView: isHero ? 1 : 2,
     controls: true,
-    loop: true,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
@@ -30,7 +29,10 @@ const useCarousel = (isHero: boolean) => {
   const next = () => (isHero ? slider.next() : slider.moveToSlide(currentSlide + slideCount));
   const prev = () => (isHero ? slider.prev() : slider.moveToSlide(currentSlide - slideCount));
 
-  return { sliderRef, next, prev, slideCount };
+  const leftDisable = currentSlide === 0;
+  const rightDisable = isHero ? currentSlide === 5 : false;
+
+  return { sliderRef, next, prev, slideCount, leftDisable, rightDisable };
 };
 
 export default useCarousel;

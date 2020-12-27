@@ -6,7 +6,7 @@ interface GridCardProps extends ITitleDetails {
 
 const VerticalCard = ({ categories, description, imgSrc, title, pos }: GridCardProps) => (
   <div
-    className={`relative z-10 hover:z-40 group h-64 bg-bg2 rounded-md transform transition-transform duration-300 ease-in-out lg:hover:scale-125 ${
+    className={`relative z-10 hover:z-40 group h-64 mx-1 bg-bg2 rounded-md transform transition-transform ease-out lg:hover:scale-125 ${
       pos === 'first' ? 'lg:hover:translate-x-11%' : pos === 'last' ? 'lg:hover:-translate-x-12%' : ''
     }`}
   >
