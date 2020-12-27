@@ -1,24 +1,11 @@
-import { useKeenSlider } from 'keen-slider/react';
-import { useState } from 'react';
-
+import useCarousel from '../../hooks/useCarousel';
 import { demoTitle } from '../../utils';
 import HeroCard from '../cards/HeroCard';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
 const HeroCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    duration: 1200,
-    spacing: 32,
-    slideChanged(s) {
-      setCurrentSlide(s.details().relativeSlide);
-    },
-  });
-
-  const next = () => slider.next();
-  const prev = () => slider.prev();
+  const { currentSlide, next, prev, sliderRef } = useCarousel();
 
   return (
     <div ref={sliderRef} className="keen-slider relative">
