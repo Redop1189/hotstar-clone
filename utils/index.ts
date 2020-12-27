@@ -4,6 +4,8 @@ export const classFull = 'max-w-screen-2xl px-4 xl:px-12 mx-auto';
 
 export const iconButtonClass = 'ml-3 p-2 border border-inputPlaceholder hover:bg-bg2 rounded-md';
 
+export const arrowBtnClass = 'absolute p-1 py-2 z-50 rounded-md';
+
 export const demoTitle: ITitleDetails = {
   categories: ['SuperHero', 'Sci-Fi', 'Marvel', 'Action'],
   year: 2019,

@@ -1,14 +1,14 @@
+import { arrowBtnClass } from '../../utils';
+
 interface LeftArrowProps {
-  shouldDisable: boolean;
   onPress: () => void;
 }
 
-const LeftArrow = ({ shouldDisable, onPress }: LeftArrowProps) => (
+const LeftArrow = ({ onPress }: LeftArrowProps) => (
   <button
     aria-label="previous"
     onClick={onPress}
-    disabled={shouldDisable}
-    className={`absolute left-0 ml-1 p-1 py-2 z-50 ${shouldDisable ? 'opacity-50' : ''}`}
+    className={`${arrowBtnClass} left-0 ml-1`}
     style={{ top: 'calc(50% - 1.5rem)' }}
   >
     <svg className="w-6 h-6 lg:w-8 lg:h-8" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

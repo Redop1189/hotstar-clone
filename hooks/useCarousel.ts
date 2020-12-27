@@ -1,23 +1,36 @@
-import { TOptionsEvents } from 'keen-slider';
 import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 
-const useCarousel = (options?: TOptionsEvents) => {
+const useCarousel = (isHero: boolean) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
-    duration: 1200,
-    spacing: 30,
+    duration: isHero ? 1200 : 2500,
+    spacing: isHero ? 30 : 8,
+    slidesPerView: isHero ? 1 : 2,
+    controls: true,
+    loop: true,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
-    ...options,
+    ...(isHero
+      ? {}
+      : {
+          breakpoints: {
+            '(min-width: 640px)': { slidesPerView: 3 },
+            '(min-width: 768px)': { slidesPerView: 4 },
+            '(min-width: 1024px)': { slidesPerView: 5, controls: false },
+            '(min-width: 1280px)': { slidesPerView: 7, controls: false },
+          },
+        }),
   });
 
-  const next = () => (!options ? slider.next() : slider.moveToSlide(currentSlide + 7));
-  const prev = () => (!options ? slider.prev() : slider.moveToSlide(currentSlide - 7));
+  const slideCount = slider?.details().slidesPerView;
 
-  return { currentSlide, sliderRef, next, prev };
+  const next = () => (isHero ? slider.next() : slider.moveToSlide(currentSlide + slideCount));
+  const prev = () => (isHero ? slider.prev() : slider.moveToSlide(currentSlide - slideCount));
+
+  return { sliderRef, next, prev, slideCount };
 };
 
 export default useCarousel;
