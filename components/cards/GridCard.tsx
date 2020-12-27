@@ -1,12 +1,14 @@
 import { ITitleDetails } from '../../utils/types';
 
 interface GridCardProps extends ITitleDetails {
-  transformClass: string;
+  pos: 'first' | 'middle' | 'last';
 }
 
-const GridCard = ({ categories, description, imgSrc, title, transformClass }: GridCardProps) => (
+const GridCard = ({ categories, description, imgSrc, title, pos }: GridCardProps) => (
   <div
-    className={`h-64 bg-bg2 rounded-md group relative transition-transform duration-300 ease-in-out ${transformClass}`}
+    className={`h-64 bg-bg2 rounded-md group hover:z-40 relative transform transition-transform duration-300 ease-in-out lg:hover:scale-125 ${
+      pos === 'first' ? 'lg:hover:translate-x-11%' : pos === 'last' ? 'lg:hover:-translate-x-12%' : ''
+    }`}
   >
     <img className="h-full object-cover rounded-md" src={imgSrc} alt={title} />
     <div className="absolute bottom-0 w-full h-1/2 rounded-md text-xs transition-opacity opacity-0 group-hover:opacity-100 bg-gradient-to-t from-bg2 via-bg2 to-transparent">

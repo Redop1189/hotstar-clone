@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+        '11%': '11%',
+        '12%': '12%',
         '55%': '55%',
         '45%': '45%',
         heroCardGradientWidth: 'calc(55% - 16rem)',
@@ -27,6 +29,7 @@ module.exports = {
   variants: {
     extend: {
       width: ['focus'],
+      zIndex: ['hover'],
     },
   },
   plugins: [],
