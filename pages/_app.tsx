@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css';
+import 'keen-slider/keen-slider.min.css';
 import '../styles/globals.css';
 
 import { AppProps } from 'next/app';

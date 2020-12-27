@@ -2880,6 +2880,11 @@ jsonfile@^6.0.1:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
+keen-slider@^5.3.5:
+  version "5.3.5"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-5.3.5.tgz#29ac24fd7dbf1f1435bd448e0e583cded36b4b91"
+  integrity sha512-3QYvrFK7HbtkiC98/G+RM44y9WBe9cpHDHtP9bI1J/Vrc54IHLuTjOjyX4E81ukRc5GwiGfijOwStxEhisFnPg==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
