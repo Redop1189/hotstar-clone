@@ -11,7 +11,7 @@ interface SmallCardProps {
 
 const SmallCard = ({ variant, titleDetails, text, pos }: SmallCardProps) => (
   <div
-    className={`${gridCardClass(pos)} h-32 md:h-48 bg-bg2 ${
+    className={`${gridCardClass(pos)} h-32 md:h-48 ${
       variant === 'small' ? 'border border-inputBorder' : ''
     } flex justify-center items-center`}
   >

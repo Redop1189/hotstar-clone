@@ -15,7 +15,8 @@
     "keen-slider": "^5.3.5",
     "next": "10.0.4",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "use-media": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.16",

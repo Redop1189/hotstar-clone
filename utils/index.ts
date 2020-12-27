@@ -13,6 +13,8 @@ export const gridCardClass = (pos: TCardIndex) =>
 
 export const textClass = 'text-xl font-semibold text-textHighlight';
 
+export const bpLabels = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
+
 export const demoTitle: ITitleDetails = {
   categories: ['SuperHero', 'Sci-Fi', 'Marvel', 'Action'],
   year: 2019,

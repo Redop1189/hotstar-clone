@@ -5,9 +5,7 @@ import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
 const VerticalCardCarousel = () => {
-  const { next, prev, sliderRef, slideCount, leftDisable, rightDisable } = useCarousel(false);
-
-  const end = [slideCount - 1, 2 * slideCount - 1, 3 * slideCount - 1];
+  const { next, prev, sliderRef, pos, leftDisable, rightDisable } = useCarousel(false);
 
   return (
     <div ref={sliderRef} className="keen-slider relative mt-3 rounded-md">
@@ -21,7 +19,7 @@ const VerticalCardCarousel = () => {
             className="keen-slider__slide h-80 flex flex-col justify-center rounded-md hover:z-40 mt-2"
             style={{ overflow: 'visible' }}
           >
-            <VerticalCard {...demoTitle} pos={j % slideCount === 0 ? 'first' : end.includes(j) ? 'last' : 'middle'} />
+            <VerticalCard {...demoTitle} pos={pos(j)} />
           </div>
         ))}
 

@@ -1,7 +1,10 @@
+import useBPValue from '../hooks/useBPValue';
 import { demoTitle, textClass } from '../utils';
 import SmallCard from './cards/SmallCard';
 
 const Gridzzz = () => {
+  const { pos } = useBPValue({ xs: 2, sm: 3, md: 3, lg: 4, xl: 5 });
+
   return (
     <>
       <p className={`${textClass} my-5`}></p>
@@ -9,7 +12,7 @@ const Gridzzz = () => {
         {Array(25)
           .fill(0)
           .map((_, j) => (
-            <SmallCard pos="middle" variant="full" titleDetails={{ ...demoTitle }} key={j} />
+            <SmallCard pos={pos(j)} variant="full" titleDetails={{ ...demoTitle }} key={j} />
           ))}
       </div>
     </>
