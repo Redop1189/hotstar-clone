@@ -1,9 +1,9 @@
-import useBPValue from '../hooks/useBPValue';
+import useCardCount from '../hooks/useCardCount';
 import { demoTitle, textClass } from '../utils';
 import SmallCard from './cards/SmallCard';
 
 const Gridzzz = () => {
-  const { pos } = useBPValue({ xs: 2, sm: 3, md: 3, lg: 4, xl: 5 });
+  const { pos } = useCardCount({ xs: 2, sm: 3, md: 3, lg: 4, xl: 5 });
 
   return (
     <>

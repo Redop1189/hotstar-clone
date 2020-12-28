@@ -1,11 +1,11 @@
 import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 
-import useBPValue from './useBPValue';
+import useCardCount from './useCardCount';
 
 const useCarousel = (isHero: boolean) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { pos, slideCount } = useBPValue({ xs: 2, sm: 3, md: 4, lg: 5, xl: 7 });
+  const { pos, slideCount } = useCardCount({ xs: 2, sm: 3, md: 4, lg: 5, xl: 7 });
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     duration: isHero ? 1200 : 2500,
@@ -14,6 +14,10 @@ const useCarousel = (isHero: boolean) => {
     controls: true,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
+    },
+    breakpoints: {
+      '(min-width: 1024px)': { controls: isHero },
+      '(min-width: 1280px)': { controls: isHero },
     },
   });
 

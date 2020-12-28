@@ -3,7 +3,7 @@ import useMedia from 'use-media';
 import { bpLabels } from '../utils';
 import { TCardIndex } from '../utils/types';
 
-const useBPValue = (bpValues: { [k in typeof bpLabels[number]]: number }) => {
+const useCardCount = (bpValues: { [k in typeof bpLabels[number]]: number }) => {
   const isXS = useMedia('(min-width: 0px)');
   const isSM = useMedia('(min-width: 640px)');
   const isMD = useMedia('(min-width: 768px)');
@@ -25,4 +25,4 @@ const useBPValue = (bpValues: { [k in typeof bpLabels[number]]: number }) => {
   return { slideCount, pos };
 };
 
-export default useBPValue;
+export default useCardCount;
