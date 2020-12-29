@@ -3,7 +3,6 @@ body {
 }
 
 .clampedLine {
-  display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -11,6 +10,7 @@ body {
 
 @media (min-width: 768px) {
   .clampedLine2 {
+    display: -webkit-box;
     -webkit-line-clamp: 4;
   }
 }
