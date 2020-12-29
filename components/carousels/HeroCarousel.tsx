@@ -11,7 +11,7 @@ const HeroCarousel = ({ dataList }: CarouselProps) => {
     <div ref={sliderRef} className="keen-slider relative">
       <LeftArrow onPress={prev} shouldDisable={leftDisable} />
       {dataList.map(i => (
-        <div key={i.id} className="w-full keen-slider__slide">
+        <div key={i.id} className="w-full keen-slider__slide rounded-md">
           <HeroCard {...i} />
         </div>
       ))}
