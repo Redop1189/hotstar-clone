@@ -5,7 +5,7 @@ import { ITitleDetails } from './types';
 // common
 const fallbackImg = '../fallbackImg.png';
 const getYear = (fullDate: string) => new Date(fullDate).getFullYear();
-const getImgSrc = (path: string | null) => (path ? `https://image.tmdb.org/t/p/original${path}` : fallbackImg);
+const getImgSrc = (path: string | null) => (path ? `https://image.tmdb.org/t/p/w500${path}` : fallbackImg);
 const getGenreNames = ({ arr, isTV }: { arr: number[]; isTV: boolean }) =>
   arr.map(i => (isTV ? tvGenres : movieGenres).find(j => j.id === i)?.name || 'NA');
 

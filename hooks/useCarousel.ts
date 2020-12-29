@@ -20,6 +20,7 @@ const useCarousel = (isHero: boolean) => {
     slidesPerView: isHero ? 1 : 2,
     controls: true,
     resetSlide: true,
+    loop: isHero,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
