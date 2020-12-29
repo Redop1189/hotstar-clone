@@ -1,7 +1,7 @@
 import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 
-import { TCardIndex } from '../utils/types';
+import { getCardPos } from '../utils';
 
 const getValueAtBp = (num: number, fun: (n: number) => void) => ({
   slidesPerView: num,
@@ -36,12 +36,7 @@ const useCarousel = (isHero: boolean) => {
         }),
   });
 
-  const end = Array(25)
-    .fill(0)
-    .map((_, j) => (j + 1) * slideCount - 1);
-
-  const pos = (index: number): TCardIndex =>
-    index % slideCount === 0 ? 'first' : end.includes(index) ? 'last' : 'middle';
+  const pos = (index: number) => getCardPos(slideCount, index);
 
   const next = () => (isHero ? slider.next() : slider.moveToSlide(currentSlide + slideCount));
   const prev = () => (isHero ? slider.prev() : slider.moveToSlide(currentSlide - slideCount));

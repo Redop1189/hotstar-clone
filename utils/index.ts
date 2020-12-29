@@ -17,6 +17,14 @@ export const bpLabels = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
 export const githubLink = 'https://github.com/vishnumohanrk/movies-app';
 
+export const getCardPos = (currentBPValue: number, index: number): TCardIndex => {
+  const end = Array(25)
+    .fill(0)
+    .map((_, j) => (j + 1) * currentBPValue - 1);
+
+  return index % currentBPValue === 0 ? 'first' : end.includes(index) ? 'last' : 'middle';
+};
+
 export const demoTitle: ITitleDetails = {
   categories: ['SuperHero', 'Sci-Fi', 'Marvel', 'Action'],
   year: 2019,

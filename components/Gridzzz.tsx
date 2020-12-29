@@ -1,9 +1,9 @@
-import useCardCount from '../hooks/useCardCount';
-import { demoTitle, textClass } from '../utils';
+import useBPValue from '../hooks/useBPValue';
+import { demoTitle, getCardPos, textClass } from '../utils';
 import SmallCard from './cards/SmallCard';
 
 const Gridzzz = () => {
-  const { pos } = useCardCount({ xs: 2, sm: 3, md: 3, lg: 4, xl: 5 });
+  const currentValue = useBPValue({ xs: 2, sm: 3, md: 3, lg: 4, xl: 5 });
 
   return (
     <>
@@ -12,7 +12,7 @@ const Gridzzz = () => {
         {Array(25)
           .fill(0)
           .map((_, j) => (
-            <SmallCard pos={pos(j)} variant="full" titleDetails={{ ...demoTitle }} key={j} />
+            <SmallCard pos={getCardPos(currentValue, j)} variant="full" titleDetails={{ ...demoTitle }} key={j} />
           ))}
       </div>
     </>
