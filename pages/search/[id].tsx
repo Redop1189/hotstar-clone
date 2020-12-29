@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 
 import Gridzzz from '../../components/Gridzzz';
+import { mockData } from '../../utils';
 
 const SearchPage = () => {
   const { query } = useRouter();
@@ -10,7 +11,7 @@ const SearchPage = () => {
   return (
     <>
       <div>{searchQuery}</div>
-      <Gridzzz />
+      <Gridzzz dataList={mockData(25)} />
     </>
   );
 };

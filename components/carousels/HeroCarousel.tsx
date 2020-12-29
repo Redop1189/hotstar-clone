@@ -1,22 +1,20 @@
 import useCarousel from '../../hooks/useCarousel';
-import { demoTitle } from '../../utils';
+import { CarouselProps } from '../../utils/types';
 import HeroCard from '../cards/HeroCard';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
-const HeroCarousel = () => {
+const HeroCarousel = ({ dataList }: CarouselProps) => {
   const { next, prev, sliderRef, leftDisable, rightDisable } = useCarousel(true);
 
   return (
     <div ref={sliderRef} className="keen-slider relative">
       <LeftArrow onPress={prev} shouldDisable={leftDisable} />
-      {Array(6)
-        .fill(0)
-        .map((_, j) => (
-          <div key={j} className="w-full keen-slider__slide">
-            <HeroCard {...demoTitle} />
-          </div>
-        ))}
+      {dataList.map(i => (
+        <div key={i.id} className="w-full keen-slider__slide">
+          <HeroCard {...i} />
+        </div>
+      ))}
       <RightArrow onPress={next} shouldDisable={rightDisable} />
     </div>
   );

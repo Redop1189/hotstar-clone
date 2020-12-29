@@ -1,19 +1,18 @@
 import useBPValue from '../hooks/useBPValue';
-import { demoTitle, getCardPos, textClass } from '../utils';
+import { getCardPos, textClass } from '../utils';
+import { CarouselProps } from '../utils/types';
 import SmallCard from './cards/SmallCard';
 
-const Gridzzz = () => {
+const Gridzzz = ({ dataList }: CarouselProps) => {
   const currentValue = useBPValue({ xs: 2, sm: 3, md: 3, lg: 4, xl: 5 });
 
   return (
     <>
       <p className={`${textClass} my-5`}></p>
       <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-10">
-        {Array(25)
-          .fill(0)
-          .map((_, j) => (
-            <SmallCard pos={getCardPos(currentValue, j)} variant="full" titleDetails={{ ...demoTitle }} key={j} />
-          ))}
+        {dataList.map((i, j) => (
+          <SmallCard pos={getCardPos(currentValue, j)} variant="full" titleDetails={{ ...i }} key={i.id} />
+        ))}
       </div>
     </>
   );

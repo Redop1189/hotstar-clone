@@ -25,10 +25,16 @@ export const getCardPos = (currentBPValue: number, index: number): TCardIndex =>
   return index % currentBPValue === 0 ? 'first' : end.includes(index) ? 'last' : 'middle';
 };
 
-export const demoTitle: ITitleDetails = {
+const demoTitle = (id: number): ITitleDetails => ({
   categories: ['SuperHero', 'Sci-Fi', 'Marvel', 'Action'],
   year: 2019,
   description: 'The Greatest Movie Evermade. The most Ambitious Crossover in the history of Entertainment.',
   imgSrc: 'https://img1.hotstarext.com/image/upload/f_auto,t_web_hm_m1/sources/r1/cms/prod/6882/676882-m',
   title: 'Avengers: Endgame',
-};
+  id,
+});
+
+export const mockData = (n: number) =>
+  Array(n)
+    .fill(0)
+    .map((_, j) => demoTitle(j));

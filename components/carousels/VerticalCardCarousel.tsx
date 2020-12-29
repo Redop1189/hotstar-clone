@@ -1,27 +1,34 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import NextLink from 'next/link';
+
 import useCarousel from '../../hooks/useCarousel';
-import { demoTitle } from '../../utils';
+import { CarouselProps } from '../../utils/types';
 import VerticalCard from '../cards/VerticalCard';
 import LeftArrow from './LeftArrow';
 import RightArrow from './RightArrow';
 
-const VerticalCardCarousel = () => {
+interface VerticalCardCarouselProps extends CarouselProps {
+  link: { name: string; src: string };
+}
+
+const VerticalCardCarousel = ({ dataList, link: { name, src } }: VerticalCardCarouselProps) => {
   const { next, prev, sliderRef, pos, leftDisable, rightDisable } = useCarousel(false);
 
   return (
     <div ref={sliderRef} className="keen-slider relative mt-3 rounded-md">
-      <p className="absolute z-30 cursor-pointer text-xl font-semibold hover:text-accent">Popular Movies</p>
+      <NextLink href={src}>
+        <a className="absolute z-30 cursor-pointer text-xl font-semibold hover:text-accent">{name}</a>
+      </NextLink>
       <LeftArrow onPress={prev} shouldDisable={leftDisable} />
-      {Array(21)
-        .fill(0)
-        .map((_, j) => (
-          <div
-            key={j}
-            className="keen-slider__slide h-80 flex flex-col justify-center rounded-md hover:z-40 mt-2"
-            style={{ overflow: 'visible' }}
-          >
-            <VerticalCard {...demoTitle} pos={pos(j)} />
-          </div>
-        ))}
+      {dataList.map((i, j) => (
+        <div
+          key={i.id}
+          className="keen-slider__slide h-80 flex flex-col justify-center rounded-md hover:z-40 mt-2"
+          style={{ overflow: 'visible' }}
+        >
+          <VerticalCard {...i} pos={pos(j)} />
+        </div>
+      ))}
 
       <RightArrow onPress={next} shouldDisable={rightDisable} />
     </div>
