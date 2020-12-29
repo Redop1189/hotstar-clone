@@ -6,10 +6,10 @@ const AppHome = () => (
   <>
     <HeroCarousel dataList={mockData(5)} />
     <div className="h-10"></div>
-    <VerticalCardCarousel link={{ name: 'Popular Movies', src: '/' }} dataList={mockData(21)} />
-    <VerticalCardCarousel link={{ name: 'Popular Movies', src: '/' }} dataList={mockData(21)} />
-    <VerticalCardCarousel link={{ name: 'Popular Movies', src: '/' }} dataList={mockData(21)} />
-    <VerticalCardCarousel link={{ name: 'Popular Movies', src: '/' }} dataList={mockData(21)} />
+    <VerticalCardCarousel name="Popular Movies" dataList={mockData(21)} />
+    <VerticalCardCarousel name="Popular Shows" dataList={mockData(21)} />
+    <VerticalCardCarousel name="Top Rated Movies" dataList={mockData(21)} />
+    <VerticalCardCarousel name="Top Rated Shows" dataList={mockData(21)} />
   </>
 );
 
