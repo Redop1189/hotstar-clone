@@ -1,6 +1,7 @@
 export interface ITitleDetails {
   title: string;
-  imgSrc: string;
+  posterImg: string;
+  coverImg: string;
   year: number;
   categories: string[];
   description: string;
