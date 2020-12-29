@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { iconButtonClass } from '../../utils';
+import { githubLink, iconButtonClass } from '../../utils';
 
 interface SearchBarProps {
   value: string;
@@ -33,7 +33,7 @@ const SearchBar = ({ setValue, value }: SearchBarProps) => {
       <a
         aria-label="View On GitHub"
         title="View On GitHub"
-        href="https://github.com/vishnumohanrk/movies-app"
+        href={githubLink}
         target="_blank"
         rel="noopener noreferrer"
         className={iconButtonClass}
