@@ -15,7 +15,7 @@ export const textClass = 'text-xl font-semibold text-textHighlight';
 
 export const bpLabels = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-export const githubLink = 'https://github.com/vishnumohanrk/movies-app';
+export const githubLink = 'https://github.com/vishnumohanrk/hotstar-clone';
 
 export const getCardPos = (currentBPValue: number, index: number): TCardIndex => {
   const end = Array(25)
