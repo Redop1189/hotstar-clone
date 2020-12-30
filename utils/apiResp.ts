@@ -74,3 +74,24 @@ export const similarMovies = (id: string) => getList({ isTV: false, path: `/movi
 
 export const oneShow = (id: string) => getSingleTitle({ isTV: true, path: `/tv/${id}` });
 export const similarShows = (id: string) => getList({ isTV: true, path: `/tv/${id}/similar` });
+
+export const search = async (query: string): Promise<ITitleDetails[]> => {
+  const resp = await fetch(url({ path: '/search/multi', query: `query=${query}&page=1&include_adult=false` }));
+
+  if (resp.ok) {
+    const { results } = await resp.json();
+
+    const filteredArr = results.filter((i: any) => i.media_type === 'tv' || i.media_type === 'movie');
+
+    return (filteredArr as any[]).map(i => {
+      const isTV = i.media_type === 'tv';
+
+      return {
+        categories: getGenreNames({ arr: i.genre_ids, isTV }),
+        ...getDetails(i, isTV),
+      };
+    });
+  }
+
+  throw new Error();
+};
