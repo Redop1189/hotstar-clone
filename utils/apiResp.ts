@@ -17,16 +17,15 @@ const getImgSrc = (path: string | null) => (path ? `https://image.tmdb.org/t/p/w
 const getGenreNames = ({ arr, isTV }: { arr: number[]; isTV: boolean }) =>
   arr.map(i => (isTV ? tvGenres : movieGenres).find(j => j.id === i)?.name || 'NA');
 
-const getDetails = (i: any, isTV: boolean) =>
-  ({
-    description: i.overview,
-    id: i.id,
-    coverImg: getImgSrc(i.backdrop_path),
-    posterImg: getImgSrc(i.poster_path),
-    title: isTV ? i.name : i.title,
-    year: getYear(isTV ? i.first_air_date : i.release_date),
-    mediaType: isTV ? 'tv' : 'movie',
-  } as Omit<ITitleDetails, 'categories'>);
+const getDetails = (i: any, isTV: boolean): Omit<ITitleDetails, 'categories'> => ({
+  description: i.overview,
+  id: i.id,
+  coverImg: getImgSrc(i.backdrop_path),
+  posterImg: getImgSrc(i.poster_path),
+  title: isTV ? i.name : i.title,
+  year: getYear(isTV ? i.first_air_date : i.release_date),
+  mediaType: isTV ? 'tv' : 'movies',
+});
 
 // fns
 const url = ({ path, query }: { path: string; query: string }) =>

@@ -32,7 +32,7 @@ const demoTitle = (id: number): ITitleDetails => ({
   coverImg: 'https://image.tmdb.org/t/p/w500/q034rbTWteRNA8sMSc2YjegmiUx.jpg',
   posterImg: 'https://image.tmdb.org/t/p/w500/q034rbTWteRNA8sMSc2YjegmiUx.jpg',
   title: 'Avengers: Endgame',
-  mediaType: 'movie',
+  mediaType: 'movies',
   id,
 });
 

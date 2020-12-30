@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 
-import Gridzzz from '../../components/Gridzzz';
-import { mockData } from '../../utils';
+import { textClass } from '../../utils';
 
 const SearchPage = () => {
   const { query } = useRouter();
@@ -9,10 +8,10 @@ const SearchPage = () => {
   const searchQuery = query.id as string;
 
   return (
-    <>
-      <div>{searchQuery}</div>
-      <Gridzzz dataList={mockData(25)} />
-    </>
+    <div className={`${textClass} text-textNormal`}>
+      <p>Search Query: {searchQuery}</p>
+      <p>Coming Soon</p>
+    </div>
   );
 };
 
