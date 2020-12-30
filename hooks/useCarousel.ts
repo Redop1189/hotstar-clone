@@ -1,5 +1,6 @@
 import { useKeenSlider } from 'keen-slider/react';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 import { getCardPos } from '../utils';
 
@@ -36,6 +37,10 @@ const useCarousel = (isHero: boolean) => {
           },
         }),
   });
+
+  const { asPath } = useRouter();
+
+  useEffect(() => slider?.refresh(), [asPath, slider]);
 
   const pos = (index: number) => getCardPos(slideCount, index);
 

@@ -8,7 +8,7 @@ interface apiFetcherArgs {
   path: string;
 }
 
-const fallbackImg = '../fallbackImg.png';
+const fallbackImg = '/fallbackImg.png';
 
 const getYear = (fullDate: string) => new Date(fullDate).getFullYear();
 
@@ -69,8 +69,8 @@ export const nowPlayingShows = () => getList({ isTV: true, path: '/tv/on_the_air
 export const topRatedShows = () => getList({ isTV: true, path: '/tv/top_rated' });
 export const popularShows = () => getList({ isTV: true, path: '/tv/popular' });
 
-export const oneMovie = (id: number) => getSingleTitle({ isTV: false, path: `/movie/${id}` });
-export const similarMovies = (id: number) => getList({ isTV: false, path: `/movie/${id}/similar` });
+export const oneMovie = (id: string) => getSingleTitle({ isTV: false, path: `/movie/${id}` });
+export const similarMovies = (id: string) => getList({ isTV: false, path: `/movie/${id}/similar` });
 
-export const oneShow = (id: number) => getSingleTitle({ isTV: true, path: `/tv/${id}` });
-export const similarShows = (id: number) => getList({ isTV: true, path: `/tv/${id}/similar` });
+export const oneShow = (id: string) => getSingleTitle({ isTV: true, path: `/tv/${id}` });
+export const similarShows = (id: string) => getList({ isTV: true, path: `/tv/${id}/similar` });

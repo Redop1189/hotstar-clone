@@ -14,3 +14,8 @@ export type TCardIndex = 'first' | 'middle' | 'last';
 export interface CarouselProps {
   dataList: ITitleDetails[];
 }
+
+export interface SingleTitlePageProps {
+  singleTitleDetails: ITitleDetails;
+  similarTitlesList: ITitleDetails[];
+}
