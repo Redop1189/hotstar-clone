@@ -6,6 +6,7 @@ export interface ITitleDetails {
   categories: string[];
   description: string;
   id: number;
+  mediaType: 'movie' | 'tv';
 }
 
 export type TCardIndex = 'first' | 'middle' | 'last';

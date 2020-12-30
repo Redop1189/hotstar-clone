@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import NextLink from 'next/link';
+
 import { gridCardClass } from '../../utils';
 import { ITitleDetails, TCardIndex } from '../../utils/types';
 import GridCardCommon from './GridCardCommon';
@@ -7,9 +10,11 @@ interface GridCardProps extends ITitleDetails {
 }
 
 const VerticalCard = ({ pos, ...rest }: GridCardProps) => (
-  <div className={`h-64 mx-1 ${gridCardClass(pos)}`}>
-    <GridCardCommon {...rest} />
-  </div>
+  <NextLink href={`/${rest.mediaType}/${rest.id}`}>
+    <a tabIndex={-1} className={`h-64 mx-1 ${gridCardClass(pos)}`}>
+      <GridCardCommon {...rest} />
+    </a>
+  </NextLink>
 );
 
 export default VerticalCard;

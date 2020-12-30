@@ -32,6 +32,7 @@ const demoTitle = (id: number): ITitleDetails => ({
   coverImg: 'https://image.tmdb.org/t/p/w500/q034rbTWteRNA8sMSc2YjegmiUx.jpg',
   posterImg: 'https://image.tmdb.org/t/p/w500/q034rbTWteRNA8sMSc2YjegmiUx.jpg',
   title: 'Avengers: Endgame',
+  mediaType: 'movie',
   id,
 });
 
@@ -80,3 +81,5 @@ export const tvGenres = [
   { id: 10768, name: 'War & Politics' },
   { id: 37, name: 'Western' },
 ];
+
+// TODO: ADJUST CARD LINK TAB FOCUS
