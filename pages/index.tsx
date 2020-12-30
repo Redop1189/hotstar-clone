@@ -2,6 +2,7 @@ import { InferGetStaticPropsType } from 'next';
 
 import HeroCarousel from '../components/carousels/HeroCarousel';
 import VerticalCardCarousel from '../components/carousels/VerticalCardCarousel';
+import MetaHead from '../components/MetaHead';
 import { popularMovies, popularShows, topRatedMovies, topRatedShows } from '../utils/apiResp';
 
 const AppHome = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -9,6 +10,7 @@ const AppHome = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <>
+      <MetaHead pageTitle="Home" />
       <HeroCarousel dataList={heroList} />
       <div className="h-10"></div>
       <VerticalCardCarousel name="Popular Movies" dataList={popularMoviesList} />

@@ -9,13 +9,13 @@ import AppHeader from '../components/header';
 import { classFull } from '../utils';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <>
+  <div className="flex flex-col min-h-screen">
     <AppHeader />
-    <main className={`${classFull} pt-1`} style={{ minHeight: 'calc(100vh - 6rem)' }}>
+    <main className={`${classFull} flex-1 pt-1`}>
       <Component {...pageProps} />
     </main>
     <AppFooter />
-  </>
+  </div>
 );
 
 export default MyApp;

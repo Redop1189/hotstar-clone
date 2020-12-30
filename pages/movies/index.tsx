@@ -2,13 +2,15 @@ import { InferGetStaticPropsType } from 'next';
 
 import HeroCarousel from '../../components/carousels/HeroCarousel';
 import VerticalCardCarousel from '../../components/carousels/VerticalCardCarousel';
+import MetaHead from '../../components/MetaHead';
 import { nowPlayingMovies, popularMovies, topRatedMovies } from '../../utils/apiResp';
 
-const AppHome = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const MoviesPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { heroList, nowPlayingMoviesList, popularMoviesList, topRatedMoviesList } = props;
 
   return (
     <>
+      <MetaHead pageTitle="Movies" />
       <HeroCarousel dataList={heroList} />
       <div className="h-10"></div>
       <VerticalCardCarousel name="Now Playing" dataList={nowPlayingMoviesList} />
@@ -34,4 +36,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default AppHome;
+export default MoviesPage;
