@@ -1,23 +1,18 @@
 import { InferGetStaticPropsType } from 'next';
 
-import HeroCarousel from '../../components/carousels/HeroCarousel';
-import VerticalCardCarousel from '../../components/carousels/VerticalCardCarousel';
-import MetaHead from '../../components/MetaHead';
+import FullPage from '../../components/pageReuse/FullPage';
 import { nowPlayingShows, popularShows, topRatedShows } from '../../utils/apiResp';
 
 const TVPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { heroList, nowPlayingShowsList, popularShowsList, topRatedShowsList } = props;
 
-  return (
-    <>
-      <MetaHead pageTitle="TV" />
-      <HeroCarousel dataList={heroList} />
-      <div className="h-10"></div>
-      <VerticalCardCarousel name="Now Playing" dataList={nowPlayingShowsList} />
-      <VerticalCardCarousel name="Popular TV" dataList={popularShowsList} />
-      <VerticalCardCarousel name="Top Rated TV" dataList={topRatedShowsList} />
-    </>
-  );
+  const pageList = [
+    { name: 'Now Playing', dataList: nowPlayingShowsList },
+    { name: 'Popular TV', dataList: popularShowsList },
+    { name: 'Top Rated TV', dataList: topRatedShowsList },
+  ];
+
+  return <FullPage heroList={heroList} pageTitle="TV" pageLists={pageList} />;
 };
 
 export const getStaticProps = async () => {
