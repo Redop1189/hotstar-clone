@@ -28,6 +28,7 @@ export const getStaticProps = async () => {
       topRatedMoviesList,
       heroList,
     },
+    revalidate: 172800,
   };
 };
 
