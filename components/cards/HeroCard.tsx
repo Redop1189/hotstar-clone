@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { ITitleDetails } from '../../utils/types';
 
 const HeroCard = ({ categories, description, coverImg, title, year, id, mediaType }: ITitleDetails) => (
-  <NextLink href={`/${mediaType}/${id}`} prefetch={false}>
+  <NextLink href={`/${mediaType}/${id}`}>
     <a tabIndex={-1} className="flex w-full h-64 md:h-72 lg:h-96 bg-bg3 relative rounded-md group focus:outline-none">
       <div className="w-full md:w-45% absolute md:static bottom-0 flex flex-col md:my-8 lg:my-16 py-4 md:py-0 px-4 md:px-8 lg:px-10 md:space-y-4 text-textNormal bg-gradient-to-t from-bg2 md:from-transparent md:via-transparent to-transparent rounded-md">
         <p className="text-lg md:text-xl lg:text-3xl font-bold text-textHighlight">{title}</p>
