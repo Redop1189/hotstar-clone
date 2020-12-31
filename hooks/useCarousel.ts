@@ -17,7 +17,7 @@ const useCarousel = (isHero: boolean) => {
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     duration: isHero ? 1800 : 2500,
-    spacing: isHero ? 12 : 0,
+    spacing: 12,
     slidesPerView: isHero ? 1 : 2,
     controls: true,
     resetSlide: true,

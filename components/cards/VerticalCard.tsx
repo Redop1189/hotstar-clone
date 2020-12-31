@@ -11,7 +11,7 @@ interface GridCardProps extends ITitleDetails {
 
 const VerticalCard = ({ pos, ...rest }: GridCardProps) => (
   <NextLink href={`/${rest.mediaType}/${rest.id}`}>
-    <a tabIndex={-1} className={`h-64 mx-1 focus:outline-none ${gridCardClass(pos)}`}>
+    <a tabIndex={-1} className={`h-64 focus:outline-none ${gridCardClass(pos)}`}>
       <GridCardCommon {...rest} />
     </a>
   </NextLink>

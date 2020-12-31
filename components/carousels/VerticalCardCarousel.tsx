@@ -13,7 +13,7 @@ const VerticalCardCarousel = ({ dataList, name }: VerticalCardCarouselProps) => 
 
   return (
     <div ref={sliderRef} className="keen-slider relative mt-3 rounded-md">
-      <p className="absolute z-30 mx-1 text-xl font-semibold">{name}</p>
+      <p className="absolute z-30 text-xl font-semibold">{name}</p>
       <LeftArrow onPress={prev} shouldDisable={leftDisable} />
       {dataList.map((i, j) => (
         <div

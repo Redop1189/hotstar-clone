@@ -24,9 +24,9 @@ const SingleTitlePage = ({ isTV, similarTitlesList, singleTitleDetails }: Single
     <>
       <MetaHead pageTitle={title} />
       <HeroCard {...singleTitleDetails} />
-      <div className="hidden md:block md:h-10"></div>
-      <div className="my-10 mx-1 md:hidden">
-        <p className={`${textClass} mb-2`}>OverView</p>
+      <div className="hidden md:block md:h-8"></div>
+      <div className="my-6 md:hidden">
+        <p className={`${textClass} mb-2`}>Overview</p>
         <p>{description}</p>
       </div>
       <VerticalCardCarousel dataList={similarTitlesList} name={`Similar ${isTV ? 'Shows' : 'Movies'}`} />
