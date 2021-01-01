@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { classFull, iconButtonClass } from '../../utils';
+import { iconButtonClass } from '../../utils';
 import AppHeading from './AppHeading';
 import NavItem from './NavItem';
 import SearchBar from './SearchBar';
@@ -17,7 +17,7 @@ const AppHeader = () => {
   useEffect(() => setExpandMenu(false), [asPath]);
 
   return (
-    <header className={`${classFull} py-5 sticky top-0 bg-bgFull`} style={{ zIndex: 99 }}>
+    <header className="py-5 sticky top-0 bg-bgFull" style={{ zIndex: 99 }}>
       <div className="sm:hidden w-full flex justify-between items-center relative">
         <AppHeading />
         <button aria-label="expand menu" className={iconButtonClass} onClick={toggleMenu}>

@@ -17,8 +17,8 @@ const FullPage = ({ heroList, pageLists, pageTitle }: FullPageProps) => (
     <MetaHead pageTitle={pageTitle} />
     <HeroCarousel dataList={heroList} />
     <div className="h-10"></div>
-    {pageLists.map(({ dataList, name }) => (
-      <VerticalCardCarousel dataList={dataList} name={name} key={name} />
+    {pageLists.map(i => (
+      <VerticalCardCarousel {...i} key={i.name} />
     ))}
   </>
 );

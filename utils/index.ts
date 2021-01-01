@@ -1,7 +1,5 @@
 import { ITitleDetails, TCardIndex } from './types';
 
-export const classFull = 'w-full max-w-screen-2xl px-4 xl:px-12 mx-auto';
-
 export const iconButtonClass = 'ml-3 p-2 border border-inputPlaceholder hover:bg-bg2 rounded-md';
 
 export const arrowBtnClass = 'absolute px-1 py-4 z-50 rounded-md bg-gray-500';
