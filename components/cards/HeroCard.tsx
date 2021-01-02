@@ -4,7 +4,7 @@ import { ITitleDetails } from '../../utils/types';
 import ExternalLink from '../footer/ExternalLink';
 
 const HeroCard = ({ categories, description, coverImg, title, year }: ITitleDetails) => {
-  const { pathname } = useRouter();
+  const { route } = useRouter();
 
   return (
     <div className="flex w-full h-64 md:h-72 lg:h-96 bg-bg3 relative rounded-md group focus:outline-none">
@@ -16,7 +16,7 @@ const HeroCard = ({ categories, description, coverImg, title, year }: ITitleDeta
           {year}
         </p>
         <p className="clampedLine clampedLine2 text-sm lg:text-base hidden md:block">{description}</p>
-        {pathname !== '/' ? (
+        {route === '/movies/[id]' ? (
           <div className="hidden lg:block absolute lg:bottom-12 xl:bottom-14 text-sm w-max">
             <ExternalLink name="Search on Google" src={`https://www.google.com/search?query=${title}`} />
           </div>
