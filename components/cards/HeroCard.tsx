@@ -18,7 +18,7 @@ const HeroCard = ({ categories, description, coverImg, title, year }: ITitleDeta
         <p className="clampedLine clampedLine2 text-sm lg:text-base hidden md:block">{description}</p>
         {route.includes('/[id]') ? (
           <div className="hidden lg:block absolute lg:bottom-12 xl:bottom-14 text-sm w-max">
-            <ExternalLink name="Search on Google" src={`https://www.google.com/search?query=${title}`} />
+            <ExternalLink name="Search on Google" src={`https://www.google.com/search?query=${title} ${year}`} />
           </div>
         ) : null}
       </div>
