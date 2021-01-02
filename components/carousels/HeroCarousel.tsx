@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import NextLink from 'next/link';
 import { useEffect, useRef } from 'react';
 
 import useCarousel from '../../hooks/useCarousel';
@@ -21,7 +23,11 @@ const HeroCarousel = ({ dataList }: CarouselProps) => {
       <ArrowBtn direction="Previous" onPress={prev} shouldDisable={false} />
       {dataList.map(i => (
         <div key={i.id} className="w-full keen-slider__slide rounded-md">
-          <HeroCard {...i} />
+          <NextLink href={`/${i.mediaType}/${i.id}`}>
+            <a tabIndex={-1}>
+              <HeroCard {...i} />
+            </a>
+          </NextLink>
         </div>
       ))}
       <ArrowBtn direction="Next" onPress={next} shouldDisable={false} />
