@@ -22,13 +22,11 @@ const HeroCarousel = ({ dataList }: CarouselProps) => {
     <div ref={sliderRef} className="keen-slider relative">
       <ArrowBtn direction="Previous" onPress={prev} shouldDisable={false} />
       {dataList.map(i => (
-        <div key={i.id} className="w-full keen-slider__slide rounded-md">
-          <NextLink href={`/${i.mediaType}/${i.id}`}>
-            <a tabIndex={-1}>
-              <HeroCard {...i} />
-            </a>
-          </NextLink>
-        </div>
+        <NextLink key={i.id} href={`/${i.mediaType}/${i.id}`}>
+          <a tabIndex={-1} className="w-full keen-slider__slide rounded-md">
+            <HeroCard {...i} />
+          </a>
+        </NextLink>
       ))}
       <ArrowBtn direction="Next" onPress={next} shouldDisable={false} />
     </div>
