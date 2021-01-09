@@ -9,9 +9,7 @@ const GridCardCommon = ({ categories, description, title, posterImg }: ITitleDet
       <div className="absolute bottom-0 z-20 flex flex-col space-y-1 text-xs w-full p-4">
         <p className="font-bold text-textHighlight">{title}</p>
         <p className="text-textHighlight">{categories.slice(0, 3).join(', ')}</p>
-        <p className="clampedLine" style={{ display: '-webkit-box' }}>
-          {description}
-        </p>
+        <p className="line-clamp-2">{description}</p>
       </div>
     </div>
   </>

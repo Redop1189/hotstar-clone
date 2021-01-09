@@ -1,16 +1,3 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-
-.clampedLine {
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .clampedLine2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-  }
-}
