@@ -22,7 +22,7 @@ const SearchPage = ({ dataList }: InferGetStaticPropsType<typeof getStaticProps>
   return (
     <>
       <MetaHead pageTitle={term} />
-      <p className={`${textClass} mt-2 mb-6`}>{term}</p>
+      <p className={`${textClass} mt-2 mb-6 lg:mx-1`}>{term}</p>
       <Gridzzz dataList={dataList} />
     </>
   );

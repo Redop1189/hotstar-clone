@@ -7,7 +7,9 @@ interface NavItemProps {
 
 const NavItem = ({ name }: NavItemProps) => (
   <NextLink href={`/${name.toLowerCase()}`}>
-    <a className="text-lg hover:text-textHighlight font-semibold tracking-wide sm:mr-5">{name}</a>
+    <a className="text-xl sm:text-lg hover:text-textHighlight font-semibold tracking-wide py-3 sm:py-5 sm:mr-5">
+      {name}
+    </a>
   </NextLink>
 );
 

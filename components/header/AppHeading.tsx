@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 
 const AppHeading = () => (
   <NextLink href="/">
-    <a className="text-2xl font-bold mr-8 text-textHighlight">Hotstar Clone</a>
+    <a className="text-2xl font-bold mr-8 py-5 text-textHighlight">Hotstar Clone</a>
   </NextLink>
 );
 
